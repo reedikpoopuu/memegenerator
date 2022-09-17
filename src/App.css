@@ -5,22 +5,31 @@
   font-family: "Poppins", Arial, sans-serif;
 }
 
+main {
+  padding: 36px;
+}
+
 .heading {
   display: flex;
   flex-direction: row;
-  background-image: linear-gradient(to right, violet, darkviolet);
+  background: linear-gradient(to right, violet, darkviolet);
   color: white;
   align-items: center;
   justify-content: space-between;
-  height: 60px;
+  height: 65px;
   margin-bottom: 1%;
+}
+
+.heading--title {
+  font-size: 1.25rem;
+  font-weight: 700;
 }
 
 .heading--logo {
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding-left: 30px;
+  padding-left: 20px;
 }
 
 .heading--img {
@@ -29,60 +38,71 @@
 }
 
 .heading--description {
-  padding-right: 30px;
+  padding-right: 20px;
+  font-size: 0.75rem;
 }
 
-.generator {
-  width: 500px;
-  margin: auto;
+.form {
+  display: grid;
+  grid-template: 40px 40px / 1fr 1fr;
+  gap: 20px;
 }
 
-.generator--button {
-  width: 100%;
-  height: 2.5em;
-  background-image: linear-gradient(to right, violet, darkviolet);
-  border: 0;
-  border-radius: 3px;
+.form--input {
+  font-family: "Poppins", Arial, sans-serif;
+  font-weight: 400;
+  border-radius: 5px;
+  border: 1px solid #D5D4D8;
+  text-indent: 5px;
+}
+
+.form--button {
+  grid-column: 1 / -1;
+  font-family: "Poppins", Arial, sans-serif;
+  border-radius: 5px;
+  border: 1px solid #D5D4D8;
+  font-weight: 400;
   color: white;
-  margin: 10px 0px;
+  background: linear-gradient(to right, violet, darkviolet);
+  cursor: pointer;
 }
 
-.generator--input {
-  height: 2em;
-  display: flex;
-
-  justify-content: space-between;
-}
-
-.generator--input > input {
-  width: 47.5%;
-}
-
-.result {
+.meme {
   position: relative;
-  width: 500px;
-  margin: auto;
-  
+  text-align: center;
 }
 
-.result--text {
+.meme--textUpper {
   position: absolute;
-  top: 0;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
-  justify-content: space-between;
+  left: 50%;
+  top: 10px;
+  font-size: 32px;
+  font-family: "Anton", Arial, sans-serif;
+  text-shadow: 1px 1px darkgray;
 }
 
-.result--text > p {
-  font-size: 3.5em;
-  color: white;
-  text-shadow: 1px 1px black;
-  font-family:"Anton", Arial, sans-serif;
-  margin: 10px;
+.meme--textLower {
+  position: absolute;
+  left: 50%;
+  bottom: 10px;
+  font-size: 32px;
+  font-family: "Anton", Arial, sans-serif;
+  text-shadow: 1px 1px darkgray;
 }
 
-.result--picture {
-  width: 100%;
+.meme--img {
+  max-width: 100%;
+}
+
+.contact--star {
+  height: 1.5rem;
+}
+
+.boxer--box {
+  border: 1px solid black;
+  background: transparent;
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+  margin-right: 10px;
 }

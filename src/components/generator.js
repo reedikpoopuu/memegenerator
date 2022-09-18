@@ -6,6 +6,7 @@ import Exercises from "./exercises";
 import Header from "./header";
 import Body from "./body";
 import Boxer from "./boxer";
+import Joke from "./joke";
 
 export default function Generator () {
     const [meme, setMeme] = React.useState({
@@ -68,6 +69,9 @@ export default function Generator () {
             <Header user={user}/>
             <Body user={user} />
             <Boxer />
+            <Joke 
+            setup="I got my daughter a fridge for a birthday."
+            punchline="I can't wait to see her face light up when she opens it."/>
         </main>
     )
 }

@@ -1,12 +1,13 @@
 import React from "react";
 import memeData from "./memeData";
-import Count from "./count";
+/* import Count from "./count";
 import Contact from "./contact";
 import Exercises from "./exercises";
 import Header from "./header";
 import Body from "./body";
 import Boxer from "./boxer";
-import Joke from "./joke";
+import Joke from "./joke"; */
+import SmallForm from "./smallForm"
 
 export default function Generator () {
     const [meme, setMeme] = React.useState({
@@ -26,19 +27,15 @@ export default function Generator () {
         });
     }
 
-    function changeTopText() {
+    function changeText(event) {
         setMeme(prevState => {
-            return {...prevState, topText: document.getElementById("topText").target.value.toUpperCase()}
+            return {
+                ...prevState, 
+                [event.target.name]: event.target.value.toUpperCase()}
         })
     }
 
-    function changeBottomText() {
-        setMeme(prevState => {
-            return {...prevState, bottomText: document.getElementById("topText").target.value.toUpperCase()}
-        })
-    }
-
-    const[user, setUser] = React.useState("Bob")
+    // const[user, setUser] = React.useState("Bob")
 
     return(
         <main className="generator">
@@ -46,24 +43,29 @@ export default function Generator () {
                 <input 
                 type="text" 
                 className="form--input"
-                id="topText"
-                onChange={changeTopText}
+                name="topText"
+                onChange={changeText}
                 placeholder="Top text"
+                value={meme.topText}
                 />
                 <input 
                 type="text" 
                 className="form--input"
-                onChange={changeBottomText}
+                name="bottomText"
+                onChange={changeText}
                 placeholder="Bottom text"
+                value={meme.bottomText}
                 />
                 <button onClick={changeImage} className="form--button">Get a new meme image</button>
             </div>
             <div className="meme">
                 <img src={meme.link} className="meme--img"/>
-                <p className="meme--textUpper">{meme.topText}</p>
-                <p className="meme--textLower">{meme.bottomText}</p>
+                <div className="meme--text">
+                    <p className="meme--textUpper">{meme.topText}</p>
+                    <p className="meme--textLower">{meme.bottomText}</p>
+                </div>
             </div>
-            <Exercises />
+            {/* <Exercises />
             <Contact />
             <Count />
             <Header user={user}/>
@@ -71,7 +73,8 @@ export default function Generator () {
             <Boxer />
             <Joke 
             setup="I got my daughter a fridge for a birthday."
-            punchline="I can't wait to see her face light up when she opens it."/>
+            punchline="I can't wait to see her face light up when she opens it."/> */}
+            <SmallForm />
         </main>
     )
 }

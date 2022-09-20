@@ -68,6 +68,7 @@ main {
 }
 
 .meme {
+  margin: 10px;
   position: relative;
   text-align: center;
 }
@@ -85,7 +86,7 @@ main {
   flex-direction: column;
   justify-content: space-between;
   color: white;
-  font-size: 32px;
+  font-size: 40px;
   font-family: "Anton", Arial, sans-serif;
   text-shadow: 1px 1px black;
 }

@@ -6,14 +6,14 @@ import Exercises from "./exercises";
 import Header from "./header";
 import Body from "./body";
 import Boxer from "./boxer";
-import Joke from "./joke"; */
-import SmallForm from "./smallForm"
+import Joke from "./joke"; 
+import Form from "./form"; */
 
 export default function Generator () {
     const [meme, setMeme] = React.useState({
         link: "https://i.imgflip.com/1bgw.jpg",
-        topText: "TOP TEXT",
-        bottomText: "BOTTOM TEXT"
+        topText: "",
+        bottomText: ""
     })
 
     const [allMemeImages, setAllMemeImages] = React.useState(memeData);
@@ -28,10 +28,11 @@ export default function Generator () {
     }
 
     function changeText(event) {
+        const {name, value} = event.target
         setMeme(prevState => {
             return {
                 ...prevState, 
-                [event.target.name]: event.target.value.toUpperCase()}
+                [name]: value.toUpperCase()}
         })
     }
 
@@ -73,8 +74,8 @@ export default function Generator () {
             <Boxer />
             <Joke 
             setup="I got my daughter a fridge for a birthday."
-            punchline="I can't wait to see her face light up when she opens it."/> */}
-            <SmallForm />
+            punchline="I can't wait to see her face light up when she opens it."/> 
+            <Form /> */}
         </main>
     )
 }

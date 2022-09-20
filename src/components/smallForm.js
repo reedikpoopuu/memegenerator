@@ -21,8 +21,13 @@ export default function SmallForm() {
         })
     }
 
+    function handleSubmit(event) {
+        event.preventDefault()
+        console.log(personData)
+    }
+
     return(
-        <form>
+        <form onSubmit={handleSubmit}>
             <input 
             type="text"
             placeholder="First Name"
@@ -30,6 +35,7 @@ export default function SmallForm() {
             name="firstName"
             value={personData.firstName}
             />
+            <br />
             <input 
             type="text"
             placeholder="Last Name"
@@ -52,6 +58,7 @@ export default function SmallForm() {
             name="description"
             value={personData.description}
             />
+            <br />
             <input 
             type="checkbox"
             id="isSerious"
@@ -116,6 +123,9 @@ export default function SmallForm() {
                 <option value="indigo">Indigo</option>
                 <option value="violet">Violet</option>
             </select>
+            <br />
+            <br />
+            <button>Submit</button>
         </form>
     )
 }

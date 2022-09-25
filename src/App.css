@@ -17,6 +17,7 @@ main {
   align-items: center;
   justify-content: space-between;
   height: 65px;
+  width: 100%;
   margin-bottom: 1%;
 }
 
@@ -68,27 +69,33 @@ main {
 }
 
 .meme {
-  margin: 10px;
+  margin: auto;
   position: relative;
-  text-align: center;
+  width: min-content;
 }
 
 .meme--img {
-  max-width: 100%;
+  max-width: 400px;
 }
 .meme--text {
   position: absolute;
-  width: 100%;
-  text-align: center;
-  top: 0;
+  width: 90%;
   height: 100%;
+  margin: 20px;
+  top: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   color: white;
-  font-size: 40px;
+  font-size: 48px;
   font-family: "Anton", Arial, sans-serif;
   text-shadow: 1px 1px black;
+}
+
+.meme--textUpper, .meme--textLower {
+  padding: 0;
+  margin-top: 0;
+  overflow-wrap: break-word;
 }
 
 .contact--star {
